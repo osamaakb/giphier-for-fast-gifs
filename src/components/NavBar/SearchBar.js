@@ -21,19 +21,22 @@ const searchGradient = [
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
-  const [searchType, setSearchType] = useState(SEARCH_TYPES.default);
+  // const [searchType, setSearchType] = useState(SEARCH_TYPES.default);
   const history = useHistory();
   const isLoading = useSelector(state => state.isLoading)
+  const searchType = history.location.pathname.split('/')[1];
+
+  console.log(searchType);
 
   const search = e => {
     e.preventDefault();
-    history.push(`/search/${searchType.slug}/${query}`);
+    history.push(`/search/${searchType}/${query}`);
   };
 
   return (
     <form onSubmit={search}>
       <div className="d-flex">
-        <MDBDropdown size="sm">
+        {/* <MDBDropdown size="sm">
           <MDBDropdownToggle caret color="dark">
             {searchType.name}
           </MDBDropdownToggle>
@@ -47,10 +50,10 @@ const SearchBar = () => {
               </MDBDropdownItem>
             ))}
           </MDBDropdownMenu>
-        </MDBDropdown>
+        </MDBDropdown> */}
         <input
           className="flex-fill"
-          placeholder="Search for gif or sticker"
+          placeholder={'Search for ' + searchType}
           onChange={e => setQuery(e.target.value)}
         />
         <Gradient
