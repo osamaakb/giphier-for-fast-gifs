@@ -24,9 +24,7 @@ const SearchBar = () => {
   // const [searchType, setSearchType] = useState(SEARCH_TYPES.default);
   const history = useHistory();
   const isLoading = useSelector(state => state.isLoading)
-  const searchType = history.location.pathname.split('/')[1];
-
-  console.log(searchType);
+  const searchType = history.location.pathname.split('/')[2] ?? history.location.pathname.split('/')[1];
 
   const search = e => {
     e.preventDefault();
