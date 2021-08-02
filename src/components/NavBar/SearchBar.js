@@ -3,10 +3,6 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 import {
-  MDBDropdown,
-  MDBDropdownMenu,
-  MDBDropdownItem,
-  MDBDropdownToggle,
   MDBIcon
 } from "mdbreact";
 import { Gradient } from "react-gradient";
@@ -21,7 +17,6 @@ const searchGradient = [
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
-  // const [searchType, setSearchType] = useState(SEARCH_TYPES.default);
   const history = useHistory();
   const isLoading = useSelector(state => state.isLoading)
   const searchType = history.location.pathname.split('/')[2] ?? history.location.pathname.split('/')[1];
@@ -34,21 +29,6 @@ const SearchBar = () => {
   return (
     <form onSubmit={search}>
       <div className="d-flex">
-        {/* <MDBDropdown size="sm">
-          <MDBDropdownToggle caret color="dark">
-            {searchType.name}
-          </MDBDropdownToggle>
-          <MDBDropdownMenu basic>
-            {Object.values(SEARCH_TYPES).map(item => (
-              <MDBDropdownItem
-                key={item.slug}
-                onClick={() => setSearchType(item)}
-              >
-                {item.name}
-              </MDBDropdownItem>
-            ))}
-          </MDBDropdownMenu>
-        </MDBDropdown> */}
         <input
           className="flex-fill"
           placeholder={'Search for ' + searchType}

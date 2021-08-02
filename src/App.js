@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  Redirect,
+  Link
 } from "react-router-dom";
 
 import Main from "./components/Main";
@@ -23,8 +24,7 @@ function App() {
 
           <Route path="/" render={() => <Redirect to="/gifs" />} />
 
-          {/* This is like 404 or default. Will match all! */}
-          <Route render={() => <div>Hi</div>} />
+          <Route render={() => <div>Hi, you landed on the wrong page, click <Link to='/'>here</Link> to go back to the main page</div>} />
         </Switch>
       </Router>
     </div>

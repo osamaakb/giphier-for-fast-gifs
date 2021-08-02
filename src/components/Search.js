@@ -7,7 +7,7 @@ import Modal from "./Modal";
 
 import Api from "../api";
 
-//can be used to render a selector on the search bar with the ability to add more in the future
+// can be used to render a selector on the search bar with the ability to add more in the future
 export const SEARCH_TYPES = {
   default: { name: "Gifs", slug: "gifs" }, //default form gifs
   stickers: { name: "Stickers", slug: "stickers" }
