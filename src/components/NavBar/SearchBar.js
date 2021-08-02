@@ -7,8 +7,6 @@ import {
 } from "mdbreact";
 import { Gradient } from "react-gradient";
 
-import { SEARCH_TYPES } from "../Search";
-
 const searchGradient = [
   ["lime", "coral"],
   ["magenta", "gold"],
