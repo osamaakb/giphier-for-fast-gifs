@@ -3,8 +3,6 @@ import GifModel from "../models/GifModel";
 
 const API_KEY = "api_key=xXR45rtNp9MpA4a2Q5LziSnkOACSSgmQ&limit=25";
 
-const ERROR_MSG = "API Error: Currently, only gifs are supported. Sorry!";
-
 class GifsRequests {
   static getTrending(itemType, signal) {
     // itemType is here in order to make the api customizable.
